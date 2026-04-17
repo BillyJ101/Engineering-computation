@@ -50,7 +50,7 @@ The project follows a modular, extensible architecture separating configuration,
 
 ## Project Structure
 
-
+'''text
 └── group75/
     ├── main.py
     ├── runExtension.py
