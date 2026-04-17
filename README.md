@@ -51,15 +51,12 @@ The project follows a modular, extensible architecture separating configuration,
 - Data extraction pipeline (`dataExtraction/`)  
   Converts temperature–time data from images into numerical input:
   - User-defined axis calibration via point selection  
-  - Colour-based filtering (HSV masking) to isolate data curves  
-  - Noise reduction using morphological operations  
-  - Pixel-to-physical coordinate transformation  
-  - Export to `.npy` / `.csv` for direct use in simulations  
+  - Colour-based filtering to isolate data curve 
+  - Pixel-to-physical coordinate static transformation
 
 - Thickness search tool  
   A standalone script that determines the minimum tile thickness satisfying a temperature constraint:
   - Uses a secant method with midpoint fallback for robustness  
-  - Enforces discrete manufacturing steps (thickness snapping)  
   - Evaluates peak inner surface temperature via full simulation  
   - Iteratively converges to the minimum feasible thickness  
 
