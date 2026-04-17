@@ -48,35 +48,29 @@ The project follows a modular, extensible architecture separating configuration,
 
 ---
 
-## Methodology
+## Project Structure
 
-The system solves the 1D transient heat equation using finite difference methods:
-
-- Spatial discretisation over the tile thickness  
-- Time integration via selectable numerical schemes  
-- Stability and accuracy vary by method  
-
-Material properties may vary spatially, allowing layered composites to be modelled.
-
-Boundary conditions are time-dependent and interpolated onto the simulation time grid.
-
----
-
-## Optimisation Extension
-
-The tile is modelled as a three-layer composite with fixed total thickness.
-
-### Goal
-
-Minimise peak inner surface temperature across different damage scenarios.
-
-### Approach
-
-- Map layer thicknesses onto the simulation grid  
-- Evaluate performance using full transient simulation  
-- Estimate gradients via finite differences  
-- Apply gradient descent with constraints:
-  - Fixed total thickness  
-  - Minimum manufacturable layer thickness  
-
-This transforms the problem into a constrained design optimisation task.
+```text
+project-root/
+├── core/
+│   ├── boundaryCondition.py
+│   ├── grid.py
+│   ├── material.py
+│   ├── simulationConfig.py
+│   └── simulationResult.py
+├── solvers/
+│   ├── backward.py
+│   ├── crankNicolson.py
+│   ├── dispatchSolver.py
+│   ├── dufortFrankel.py
+│   └── forward.py
+├── extension/
+│   ├── evaluateDesign.py
+│   ├── gradCalculator.py
+│   └── optimiseThicknesses.py
+├── data/
+│   └── temp597.npy
+├── runSimulation.py
+├── runExtension.py
+├── thicknessStudy.py
+└── README.md
