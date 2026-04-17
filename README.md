@@ -17,6 +17,8 @@ A modular finite-difference solver for transient heat conduction, extended to op
 - Gradient-based optimisation of layer thickness under constraints
 - Scenario-based evaluation
 - Visualisation tools
+- Image-based data extraction pipeline for generating boundary condition inputs
+- Constraint-based thickness search using a secant method with manufacturability limits
 
 ---
 
@@ -45,6 +47,21 @@ The project follows a modular, extensible architecture separating configuration,
   - `evaluateDesign`: computes objective across scenarios  
   - `computeGradient`: numerical gradient estimation  
   - `optimiseThicknesses`: constrained gradient descent loop  
+
+- Data extraction pipeline (`dataExtraction/`)  
+  Converts temperature–time data from images into numerical input:
+  - User-defined axis calibration via point selection  
+  - Colour-based filtering (HSV masking) to isolate data curves  
+  - Noise reduction using morphological operations  
+  - Pixel-to-physical coordinate transformation  
+  - Export to `.npy` / `.csv` for direct use in simulations  
+
+- Thickness search tool  
+  A standalone script that determines the minimum tile thickness satisfying a temperature constraint:
+  - Uses a secant method with midpoint fallback for robustness  
+  - Enforces discrete manufacturing steps (thickness snapping)  
+  - Evaluates peak inner surface temperature via full simulation  
+  - Iteratively converges to the minimum feasible thickness  
 
 ---
 
@@ -86,6 +103,12 @@ The project follows a modular, extensible architecture separating configuration,
     │
     ├── inputOutput/
     │   └── loadBoundaryData.py
+    │
+    ├── dataExtraction/
+    │   └── extractBoundaryData.py
+    │
+    ├── thicknessSearch/
+    │   └── findMinimumThickness.py
     │
     └── data/
         └── temp597.npy
