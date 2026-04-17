@@ -71,6 +71,7 @@ The project follows a modular, extensible architecture separating configuration,
     ├── runSpatialStepStudy.py
     ├── runThicknessStudy.py
     ├── runTimeStepStudy.py
+    ├── findMinimumThickness.py
     │
     ├── core/
     │   ├── boundaryCondition.py
@@ -104,8 +105,6 @@ The project follows a modular, extensible architecture separating configuration,
     ├── dataExtraction/
     │   └── extractBoundaryData.py
     │
-    ├── thicknessSearch/
-    │   └── findMinimumThickness.py
-    │
     └── data/
-        └── temp597.npy
+        ├── temp597.npy
+        └── temp597.jpg
