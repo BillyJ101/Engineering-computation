@@ -50,9 +50,8 @@ The project follows a modular, extensible architecture separating configuration,
 
 ## Project Structure
 
-```text
-project-root/
-└── submissionCode/
+
+└── group75/
     ├── main.py
     ├── runExtension.py
     ├── runSpatialStepStudy.py
