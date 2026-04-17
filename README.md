@@ -81,12 +81,6 @@ The project follows a modular, extensible architecture separating configuration,
     │   ├── objectiveFunction.py
     │   └── optimiser.py
     │
-    ├── studies/
-    │   ├── damageStudy.py
-    │   ├── methodComparison.py
-    │   ├── studyHelpers.py
-    │   └── thicknessStudy.py
-    │
     ├── plotting/
     │   └── tempuraturePlots.py
     │
