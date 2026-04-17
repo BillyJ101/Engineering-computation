@@ -52,25 +52,47 @@ The project follows a modular, extensible architecture separating configuration,
 
 ```text
 project-root/
-├── core/
-│   ├── boundaryCondition.py
-│   ├── grid.py
-│   ├── material.py
-│   ├── simulationConfig.py
-│   └── simulationResult.py
-├── solvers/
-│   ├── backward.py
-│   ├── crankNicolson.py
-│   ├── dispatchSolver.py
-│   ├── dufortFrankel.py
-│   └── forward.py
-├── extension/
-│   ├── evaluateDesign.py
-│   ├── gradCalculator.py
-│   └── optimiseThicknesses.py
-├── data/
-│   └── temp597.npy
-├── runSimulation.py
-├── runExtension.py
-├── thicknessStudy.py
-└── README.md
+└── submissionCode/
+    ├── main.py
+    ├── runExtension.py
+    ├── runSpatialStepStudy.py
+    ├── runThicknessStudy.py
+    ├── runTimeStepStudy.py
+    │
+    ├── core/
+    │   ├── boundaryCondition.py
+    │   ├── grid.py
+    │   ├── material.py
+    │   ├── simulationConfig.py
+    │   └── simulationResult.py
+    │
+    ├── solvers/
+    │   ├── backwardSolver.py
+    │   ├── crankNicolsonSolver.py
+    │   ├── dispatchSolver.py
+    │   ├── dufortFrankelSolver.py
+    │   ├── forwardSolver.py
+    │   └── tdmSolver.py
+    │
+    ├── extension/
+    │   ├── damageScenarios.py
+    │   ├── evaluateDesign.py
+    │   ├── gradCalculator.py
+    │   ├── materialPropertyBuilder.py
+    │   ├── objectiveFunction.py
+    │   └── optimiser.py
+    │
+    ├── studies/
+    │   ├── damageStudy.py
+    │   ├── methodComparison.py
+    │   ├── studyHelpers.py
+    │   └── thicknessStudy.py
+    │
+    ├── plotting/
+    │   └── tempuraturePlots.py
+    │
+    ├── inputOutput/
+    │   └── loadBoundaryData.py
+    │
+    └── data/
+        └── temp597.npy
