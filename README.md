@@ -12,7 +12,7 @@ A modular finite-difference solver for transient heat conduction, extended to op
   - Crank–Nicolson
   - Dufort–Frankel
 - Time-dependent boundary condition handling via interpolation
-- Config-driven simulation pipeline
+- Config-driven simulation 
 - Multi-layer material modelling with spatially varying properties
 - Gradient-based optimisation of layer thickness under constraints
 - Scenario-based evaluation
@@ -30,10 +30,10 @@ The project follows a modular, extensible architecture separating configuration,
   Defines all simulation parameters
 
 - `dispatchSolver`  
-  Routes execution to the selected numerical method and decouples solver selection from implementation
+  Finds and executes selected numerical method and decouples solver selection from implementation
 
 - Solver implementations  
-  Independent modules for each scheme with shared input/output structure
+  Independent modules for each scheme with shared i/o structure
 
 - `BoundaryCondition`  
   Handles time-dependent temperature data via interpolation
